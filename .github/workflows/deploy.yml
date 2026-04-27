@@ -13,10 +13,13 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Build Docker image
-      run: docker build -t your-dockerhub-username/devops-app .
+      run: docker build -t shivangeeevs/devops-app ./app
 
     - name: Login to DockerHub
       run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
     - name: Push Docker image
-      run: docker push your-dockerhub-username/devops-app
+      run: docker push shivangeeevs/devops-app
+
+
+
